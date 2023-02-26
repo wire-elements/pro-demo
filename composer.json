@@ -19,7 +19,7 @@
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.5",
         "spatie/laravel-markdown": "^2.2",
-        "wire-elements/pro": "^2.0@beta"
+        "wire-elements/pro": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

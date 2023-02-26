@@ -24,12 +24,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerSpotlightGroups();
-        $this->registerSpotlightModes();
-        $this->registerSpotlightRandomTips();
-        $this->registerSpotlightTokens();
-        $this->registerSpotlightScopes();
-        $this->registerSpotlightQueries();
+        Spotlight::setup(function() {
+            $this->registerSpotlightGroups();
+            $this->registerSpotlightModes();
+            $this->registerSpotlightRandomTips();
+            $this->registerSpotlightTokens();
+            $this->registerSpotlightScopes();
+            $this->registerSpotlightQueries();
+        });
     }
 
     /**
