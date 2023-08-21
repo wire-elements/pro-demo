@@ -135,6 +135,15 @@
 - Queue worker daemon should also listen for SIGQUIT ([#43607](https://github.com/laravel/framework/pull/43607))
 - Keep original keys when using Collection->sortBy() with an array of sort operations ([#43609](https://github.com/laravel/framework/pull/43609))
 </x-markdown>
+
+                                        <div class="my-4">
+                                            <h4 class="text-xl font-medium">Leave a comment</h4>
+                                            <p>If you want to try the insert component, start typing, and tag someone using the `@` sign, like Example user.</p>
+
+                                            <textarea {{ wep_insert(['user']) }} rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+
+                                            <button type="button" wire:click="confirm" class="rounded mt-2 bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>

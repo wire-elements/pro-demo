@@ -39,7 +39,7 @@
 
         @stack('modals')
 
-{{--        @livewire('insert-pro')--}}
+        @livewire('insert-pro')
         @livewire('modal-pro')
         @livewire('slide-over-pro')
         @livewire('spotlight-pro')

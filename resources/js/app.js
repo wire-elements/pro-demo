@@ -1,9 +1,3 @@
-import './bootstrap';
-
-import Alpine from 'alpinejs';
-import focus from '@alpinejs/focus'
-
-Alpine.plugin(focus)
-window.Alpine = Alpine;
-
-Alpine.start();
+import '../../vendor/wire-elements/pro/resources/js/overlay-component'
+import '../../vendor/wire-elements/pro/resources/js/spotlight-component'
+import '../../vendor/wire-elements/pro/resources/js/insert-component'

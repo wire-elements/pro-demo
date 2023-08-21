@@ -1,5 +1,6 @@
 @import "../../vendor/wire-elements/pro/resources/css/tailwind/spotlight-component.css";
 @import "../../vendor/wire-elements/pro/resources/css/tailwind/overlay-component.css";
+@import "../../vendor/wire-elements/pro/resources/css/tailwind/insert-component.css";
 
 @tailwind base;
 @tailwind components;

@@ -78,7 +78,8 @@ class AppServiceProvider extends ServiceProvider
     private function registerSpotlightTokens(): void
     {
         Spotlight::registerTokens(
-            SpotlightScopeToken::make('repository', function (SpotlightScopeToken $token, Repository $repository) {
+            SpotlightScopeToken::make('repository', function (SpotlightScopeToken $token, Repository $repository):void {
+                $repository->refresh();
                 $token->setParameters(['id' => $repository->id, 'slug' => $repository->slug]);
                 $token->setText($repository->name);
             }),
@@ -158,27 +159,27 @@ class AppServiceProvider extends ServiceProvider
                     SpotlightResult::make()
                         ->setTitle('Pull Requests')
                         ->setGroup('pages')
-                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['dummy-slide-over']])
+                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['component' => 'dummy-slide-over']])
                         ->setIcon('arrow-path-rounded-square'),
                     SpotlightResult::make()
                         ->setTitle('Discussions')
                         ->setGroup('pages')
-                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['dummy-slide-over']])
+                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['component' => 'dummy-slide-over']])
                         ->setIcon('chat-bubble-bottom-center-text'),
                     SpotlightResult::make()
                         ->setTitle('Actions')
                         ->setGroup('pages')
-                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['dummy-slide-over']])
+                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['component' => 'dummy-slide-over']])
                         ->setIcon('play-circle'),
                     SpotlightResult::make()
                         ->setTitle('Projects')
                         ->setGroup('pages')
-                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['dummy-slide-over']])
+                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['component' => 'dummy-slide-over']])
                         ->setIcon('clipboard-document-list'),
                     SpotlightResult::make()
                         ->setTitle('Security')
                         ->setGroup('pages')
-                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['dummy-slide-over']])
+                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['component' => 'dummy-slide-over']])
                         ->setIcon('shield-check'),
                 ]
                 )->when(! blank($query), function ($collection) use ($query) {
@@ -230,7 +231,7 @@ class AppServiceProvider extends ServiceProvider
                     SpotlightResult::make()
                         ->setTitle('Delete release')
                         ->setGroup('actions')
-                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['dummy-slide-over']])
+                        ->setAction('emit_event', ['name' => 'slide-over.open', 'data' => ['component' => 'dummy-slide-over']])
                         ->setIcon('trash'),
                 ]
                 )->when(! blank($query), function ($collection) use ($query) {

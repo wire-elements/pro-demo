@@ -26,7 +26,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/repositories', \App\Http\Livewire\RepositoriesIndex::class)->name('repositories');
-    Route::get('/repositories/{repository:slug}', \App\Http\Livewire\RepositoriesShow::class)->name('repositories.show');
-    Route::get('/repositories/{repository:slug}/releases/{release}', \App\Http\Livewire\ReleaseShow::class)->name('releases.show');
+    Route::get('/repositories', \App\Livewire\RepositoriesIndex::class)->name('repositories');
+    Route::get('/repositories/{repository:slug}', \App\Livewire\RepositoriesShow::class)->name('repositories.show');
+    Route::get('/repositories/{repository:slug}/releases/{release}', \App\Livewire\ReleaseShow::class)->name('releases.show');
 });
