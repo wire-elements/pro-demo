@@ -65,7 +65,7 @@
 
                                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                         <a href="{{ route('releases.show', [$repository, $release]) }}" class="inline-flex items-center rounded border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">View Release</a>
-                                        <button type="button" wire:click="$dispatch('modal.open', { component: 'assets-show', arguments: @js(['releaseId' => $release->id, 'lazy' => true]) })" class="inline-flex items-center rounded border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">View Assets</button>
+                                        <button type="button" wire:modal="assets-show, @js(['releaseId' => $release->id, 'lazy' => true])" class="inline-flex items-center rounded border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">View Assets</button>
                                     </td>
                                 </tr>
                             @endforeach
